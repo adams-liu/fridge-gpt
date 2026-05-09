@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Fridge GPT Checkout Saver",
+  "description": "Save visible No Frills checkout item data to a local FastAPI backend.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Save No Frills checkout",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://www.nofrills.ca/*", "https://nofrills.ca/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.nofrills.ca/*", "https://nofrills.ca/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
